@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-class GuitarDetail extends Component{
+class GameDetail extends Component{
   render(){
     if(!this.props.selectedguitar){
       return(
@@ -25,18 +25,18 @@ class GuitarDetail extends Component{
     return(
       <div>
         <article>
-      <h3><div>{this.props.selectedguitar.title1}</div></h3>
-      <div>Date:{this.props.selectedguitar.date1}</div>
+      <h3><div>{this.props.selectedgame.title1}</div></h3>
+      <div>Date:{this.props.selectedgame.date1}</div>
       <center><img src={this.props.selectedguitar.image1} alt="martin 000-17" height="180" width="350" /></center>
-      <div>{this.props.selectedguitar.description1}</div>
-      <h3><div>{this.props.selectedguitar.title2}</div></h3>
-      <div>Date:{this.props.selectedguitar.date2}</div>
-      <center><img src={this.props.selectedguitar.image2} alt="martin 000-17" height="180" width="350" /></center>
-      <div>{this.props.selectedguitar.description2}</div>
-      <h3><div>{this.props.selectedguitar.title3}</div></h3>
-      <div>Date:{this.props.selectedguitar.date3}</div>
-      <center><img src={this.props.selectedguitar.image3} alt="martin 000-17" height="180" width="350" /></center>
-      <div>{this.props.selectedguitar.description3}</div>
+      <div>{this.props.selectedgame.description1}</div>
+      <h3><div>{this.props.selectedgame.title2}</div></h3>
+      <div>Date:{this.props.selectedgame.date2}</div>
+      <center><img src={this.props.selectedgame.image2} alt="martin 000-17" height="180" width="350" /></center>
+      <div>{this.props.selectedgame.description2}</div>
+      <h3><div>{this.props.selectedgame.title3}</div></h3>
+      <div>Date:{this.props.selectedgame.date3}</div>
+      <center><img src={this.props.selectedgame.image3} alt="martin 000-17" height="180" width="350" /></center>
+      <div>{this.props.selectedgame.description3}</div>
         </article>
       </div>
     );
@@ -44,8 +44,8 @@ class GuitarDetail extends Component{
 }
 function mapstatetoprops(state){
   return{
-    selectedguitar:state.active_guitar
+    selectedgame:state.active_game
   };
 }
 
-export default connect(mapstatetoprops)(GuitarDetail);
+export default connect(mapstatetoprops)(GameDetail);
